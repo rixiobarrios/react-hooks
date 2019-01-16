@@ -13,7 +13,7 @@
 
 By the end of this, developers should be able to:
 
-- Make HTTP requests to an API from within a React app using [axios](https://github.com/axios/axios):
+- Make HTTP requests to an API from within a React app using [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API):
   -  (R)EAD resource collection.
   -  (R)EAD specific resource.
   -  (D)ELETE specific resource.
@@ -27,22 +27,25 @@ By the end of this, developers should be able to:
 
 ## Movie API
 
-This project is meant to work along side https://git.generalassemb.ly/ga-wdi-boston/movie-api#movies to demonstrate creating a basic single page application in React that talks to a Rails API.
-
-## Lab: Movie Application
-Create a new folder in `temp` named `movie-application`.  In this folder, we will clone our rails api and will create a react client application to communicate with it.
+This project is meant to work along side [this movie API](https://git.generalassemb.ly/ga-wdi-boston/movie-api#movies) to demonstrate creating a basic single page application in React that talks to a Rails API.
 
 ### Lab: Setup Rails API
-In your `temp/movie-application` folder, fork, clone and follow the set up instructionsfor the rails api https://git.generalassemb.ly/ga-wdi-boston/movie-api.
 
-### Code along: Setup React App
-In your `temp/movie-application` folder, review [react](https://git.generalassemb.ly/ga-wdi-boston/react) to set up a new react app named `movie-client`.
+Create a new folder in `temp` named `movie-api`.  In this folder, we will clone our Rails API.
 
-#### Code along: Add React Router
-Review [react-router](https://git.generalassemb.ly/ga-wdi-boston/react-router) to add react router.
+In your `temp/movie-api` folder, fork, clone and follow the set up instructions for the Rails API.
 
-#### Code along: Add Axios
-Include axios library using npm https://www.npmjs.com/package/axios.
+### Discussion: `react-template`
+
+This repo includes a copy of [react-template](git@git.generalassemb.ly:ga-wdi-boston/react-template.git). This template is quite minimal. Most of the functionality comes from [create-react-app](https://facebook.github.io/create-react-app/), which is a command line tool that lets you create new React projects out of thin air, with all the nececssary packages and configuration to get right to work. **Take a minute to read their website**. If you ever want to start a new React-project without using our template, `create-react-app` is they way to go.
+
+Our template comes with a few extra features though. Try running `npm run server` and see what comes up. Take a look through the `src` directory to get a sense of the starter code there.
+
+The main features that the template has that are not included in `create-react-app`:
+- `react-router`
+- A deployment script
+- An SCSS compiler
+- A custom linter config
 
 ## CRUD a Movie
 
@@ -55,39 +58,39 @@ Include axios library using npm https://www.npmjs.com/package/axios.
       1.  Add component constructor
       1.  Add component render
       1.  Add component event
-      1.  Add component axios call
+      1.  Add component `fetch` call
 
-### Code along: (R)EAD movies collection
+### Code-along: (R)EAD movies collection
 - browser
 - curl
-- react
+- React
 
 ### Code along: (R)EAD specific movie
 - browser
 - curl
-- react
+- React
 
 ### Lab: (D)ELETE specific movie
 - curl
-- react
+- React
 
 ### Code along: (U)PDATE specific movie
 - curl
-- AJAX
+- React
 
 ### Lab: (C)REATE new movie
 - curl
-- react
+- React
 
 ## Advanced React
 
-### Demo
+### Code-along:
 - Refactor forms into shared component
 - Add footer using component composition
 
 ## Additional Resources
 -   [React FAQ AJAX](https://reactjs.org/docs/faq-ajax.html)
--   [Axios and React](https://alligator.io/react/axios-react/)
+-   [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 
 ## [License](LICENSE)
 
