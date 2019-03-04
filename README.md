@@ -13,7 +13,7 @@
 
 By the end of this, developers should be able to:
 
-- Make HTTP requests to an API from within a React app using [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API):
+- Make HTTP requests to an API from within a React app using [axios](https://www.npmjs.com/package/axios):
   -  (R)EAD resource collection.
   -  (R)EAD specific resource.
   -  (D)ELETE specific resource.
@@ -58,7 +58,7 @@ The main features that the template has that are not included in `create-react-a
       1.  Add component constructor
       1.  Add component render
       1.  Add component event
-      1.  Add component `fetch` call
+      1.  Add component `axios` call
 
 ### Code-along: (R)EAD movies collection
 - browser
@@ -90,7 +90,7 @@ The main features that the template has that are not included in `create-react-a
 
 ## Additional Resources
 -   [React FAQ AJAX](https://reactjs.org/docs/faq-ajax.html)
--   [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+-   [Axios](https://www.npmjs.com/package/axios)
 
 ## [License](LICENSE)
 
