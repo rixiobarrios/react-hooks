@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import './App.scss'
+import React from 'react'
 import { Route, Link } from 'react-router-dom'
 
 const Dashboard = () => (
