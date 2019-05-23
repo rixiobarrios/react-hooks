@@ -98,6 +98,8 @@ The main features that the template has that are not included in `create-react-a
 - curl
 - React
 
+*Hint: [Handling Multiple Inputs in React](https://reactjs.org/docs/forms.html#handling-multiple-inputs)*
+
 ### Lab: (C)REATE new movie
 
 - curl
