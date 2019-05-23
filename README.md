@@ -112,6 +112,10 @@ The main features that the template has that are not included in `create-react-a
 
 - [React FAQ AJAX](https://reactjs.org/docs/faq-ajax.html)
 - [Axios](https://www.npmjs.com/package/axios)
+- [Using Axios with React (10 min :movie_camera:)](https://www.youtube.com/watch?v=oQnojIyTXb8)
+- [9 Things Every ReactJS Beginner Should Know](https://camjackson.net/post/9-things-every-reactjs-beginner-should-know)
+- [Smart and Dumb Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+- [React AHA Moments](https://tylermcginnis.com/react-aha-moments/)
 
 ## [License](LICENSE)
 
