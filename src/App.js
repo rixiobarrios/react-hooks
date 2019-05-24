@@ -4,7 +4,7 @@ import { Route, Link } from 'react-router-dom'
 const Dashboard = () => (
   <div>
     <h3>Dashboard</h3>
-    <p>This is separate route.</p>
+    <p>This is a separate route.</p>
   </div>
 )
 
