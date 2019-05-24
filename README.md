@@ -107,7 +107,7 @@ The main features that the template has that are not included in `create-react-a
 
 ## Advanced React
 
-### Code-along:
+### Code along: Refactoring
 
 - Refactor forms into shared component
 - Add footer using component composition
