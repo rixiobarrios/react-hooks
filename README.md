@@ -69,12 +69,12 @@ The main features that the template has that are not included in `create-react-a
 1. Test API in browser (if possible)
 1. Test API with curl script
 1. Add feature to react application
-  1. Add route to `src/components/App.js`
-  1. Create component to render for route
-    1. Add component constructor
-    1. Add component render
-    1. Add component event
-    1. Add component `axios` call
+    1. Add route to `src/components/App.js`
+    1. Create component to render for route
+        1. Add component constructor
+        1. Add component render
+        1. Add component event
+        1. Add component `axios` call
 
 ### Code-along: (R)EAD movies collection
 
