@@ -29,17 +29,13 @@ By the end of this, developers should be able to:
 
 ## Movie API
 
-This project is meant to work along side [this movie API](https://git.generalassemb.ly/ga-wdi-boston/movie-api#movies)
+This project is meant to work along side [this movie API](https://sei-movie-api.herokuapp.com)
 to demonstrate creating a basic single page application in React that talks to a
 Rails API.
 
-### Lab: Setup Rails API
-
-Create a new folder in `temp` named `movie-api`. In this folder, we will clone
-our Rails API.
-
-In your `temp/movie-api` folder, fork, clone and follow the set up instructions
-for the Rails API.
+Navigate to [`/movies`](https://sei-movie-api.herokuapp.com/movies) in your
+browser. You should see an object with a key `'movies'` that points to an array
+of movie objects. We will use this movie data throughout this lesson. 
 
 ### Discussion: `react-template`
 
