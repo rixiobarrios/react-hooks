@@ -16,7 +16,11 @@ componentDidMount () {
 }
 // new async/await version:
 async componentDidMount() {
-  const response = await axios.get(`${constants.API_BASE_URL}/movies`)
-  this.setState({movies: response.data.movies})
+  try {
+    const response = await axios(`${apiUrl}/movies`)
+    this.setState({movies: response.data.movies})
+  } catch (err) {
+    console.error(err)
+  }
 }
 ```
