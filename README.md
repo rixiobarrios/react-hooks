@@ -67,7 +67,7 @@ The main features that the template has that are not included in `create-react-a
 ### Methodical Approach
 
 1. Test API in browser (if possible)
-1. Test API with curl script
+1. Test API with cURL script
 1. Add feature to react application
     1. Add route to `src/components/App.js`
     1. Create component to render for route
@@ -78,31 +78,31 @@ The main features that the template has that are not included in `create-react-a
 
 ### Code-along: (R)EAD movies collection
 
-- browser
-- curl
+- Browser
+- cURL
 - React
 
 ### Code along: (R)EAD specific movie
 
-- browser
-- curl
+- Browser
+- cURL
 - React
 
 ### Lab: (D)ELETE specific movie
 
-- curl
+- cURL
 - React
 
 ### Code along: (U)PDATE specific movie
 
-- curl
+- cURL
 - React
 
 *Hint: [Handling Multiple Inputs in React](https://reactjs.org/docs/forms.html#handling-multiple-inputs)*
 
 ### Lab: (C)REATE new movie
 
-- curl
+- cURL
 - React
 
 ## Advanced React
