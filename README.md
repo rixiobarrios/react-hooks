@@ -35,7 +35,7 @@ Rails API.
 
 Navigate to [`/movies`](https://sei-movie-api.herokuapp.com/movies) in your
 browser. You should see an object with a key `'movies'` that points to an array
-of movie objects. We will use this movie data throughout this lesson. 
+of movie objects. We will use this movie data throughout this lesson.
 
 ### Discussion: `react-template`
 
@@ -107,6 +107,12 @@ The main features that the template has that are not included in `create-react-a
 
 - Refactor forms into shared component
 - Add footer using component composition
+- Use `async` & `await` instead of promises
+
+### Bonus Lab: `async` & `await`
+
+Refactor the remaining CRUD functionality to use `async` and `await` instead
+of Promise chains.
 
 ## Additional Resources
 
