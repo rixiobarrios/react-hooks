@@ -29,17 +29,13 @@ By the end of this, developers should be able to:
 
 ## Movie API
 
-This project is meant to work along side [this movie API](https://git.generalassemb.ly/ga-wdi-boston/movie-api#movies)
+This project is meant to work along side [this movie API](https://sei-movie-api.herokuapp.com)
 to demonstrate creating a basic single page application in React that talks to a
 Rails API.
 
-### Lab: Setup Rails API
-
-Create a new folder in `temp` named `movie-api`. In this folder, we will clone
-our Rails API.
-
-In your `temp/movie-api` folder, fork, clone and follow the set up instructions
-for the Rails API.
+Navigate to [`/movies`](https://sei-movie-api.herokuapp.com/movies) in your
+browser. You should see an object with a key `'movies'` that points to an array
+of movie objects. We will use this movie data throughout this lesson.
 
 ### Discussion: `react-template`
 
@@ -67,42 +63,42 @@ The main features that the template has that are not included in `create-react-a
 ### Methodical Approach
 
 1. Test API in browser (if possible)
-1. Test API with curl script
+1. Test API with cURL script
 1. Add feature to react application
-  1. Add route to `src/components/App.js`
-  1. Create component to render for route
-    1. Add component constructor
-    1. Add component render
-    1. Add component event
-    1. Add component `axios` call
+    1. Add route to `src/components/App.js`
+    1. Create component to render for route
+        1. Add component constructor
+        1. Add component render
+        1. Add component event
+        1. Add component `axios` call
 
 ### Code-along: (R)EAD movies collection
 
-- browser
-- curl
+- Browser
+- cURL
 - React
 
 ### Code along: (R)EAD specific movie
 
-- browser
-- curl
+- Browser
+- cURL
 - React
 
 ### Lab: (D)ELETE specific movie
 
-- curl
+- cURL
 - React
 
 ### Code along: (U)PDATE specific movie
 
-- curl
+- cURL
 - React
 
 *Hint: [Handling Multiple Inputs in React](https://reactjs.org/docs/forms.html#handling-multiple-inputs)*
 
 ### Lab: (C)REATE new movie
 
-- curl
+- cURL
 - React
 
 ## Advanced React
@@ -111,6 +107,12 @@ The main features that the template has that are not included in `create-react-a
 
 - Refactor forms into shared component
 - Add footer using component composition
+- Use `async` & `await` instead of promises
+
+### Bonus Lab: `async` & `await`
+
+Refactor the remaining CRUD functionality to use `async` and `await` instead
+of Promise chains.
 
 ## Additional Resources
 
