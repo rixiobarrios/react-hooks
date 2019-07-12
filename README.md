@@ -4,21 +4,14 @@
 
 ## Prerequisites
 
-- [react](https://git.generalassemb.ly/ga-wdi-boston/react)
-- [react-components-props](https://git.generalassemb.ly/ga-wdi-boston/react-components-props)
-- [react-components-state](https://git.generalassemb.ly/ga-wdi-boston/react-components-state)
-- [react-router](https://git.generalassemb.ly/ga-wdi-boston/react-router)
+- [react-crud](https://git.generalassemb.ly/ga-wdi-boston/react-crud)
 
 ## Objectives
 
 By the end of this, developers should be able to:
 
-- Make HTTP requests to an API from within a React app using [axios](https://www.npmjs.com/package/axios):
-  - (R)EAD resource collection.
-  - (R)EAD specific resource.
-  - (D)ELETE specific resource.
-  - (U)PDATE specific resource.
-  - (C)REATE new resource.
+- Hook into state from a functional component.
+- Use an effect inside of a functional component.
 
 ## Preparation
 
@@ -33,86 +26,6 @@ This project is meant to work along side [this movie API](https://sei-movie-api.
 to demonstrate creating a basic single page application in React that talks to a
 Rails API.
 
-Navigate to [`/movies`](https://sei-movie-api.herokuapp.com/movies) in your
-browser. You should see an object with a key `'movies'` that points to an array
-of movie objects. We will use this movie data throughout this lesson.
-
-### Discussion: `react-template`
-
-This repo includes a copy of [react-template](git@git.generalassemb.ly:ga-wdi-boston/react-template.git).
-This template is quite minimal. Most of the functionality comes from [create-react-app](https://facebook.github.io/create-react-app/),
-which is a command line tool that lets you create new React projects out of
-thin air, with all the nececssary packages and configuration to get right to
-work.
-**Take a minute to read their website**. If you ever want to start a new
-React-project without using our template, `create-react-app` is they way to go.
-
-Our template comes with a few extra features though. Try running `npm run server`
-and see what comes up. Take a look through the `src` directory to get a sense
-of the starter code there.
-
-The main features that the template has that are not included in `create-react-app`:
-
-- `react-router`
-- A deployment script
-- An SCSS compiler
-- A custom linter config
-
-## CRUD a Movie
-
-### Methodical Approach
-
-1. Test API in browser (if possible)
-1. Test API with cURL script
-1. Add feature to react application
-    1. Add route to `src/components/App.js`
-    1. Create component to render for route
-        1. Add component constructor
-        1. Add component render
-        1. Add component event
-        1. Add component `axios` call
-
-### Code-along: (R)EAD movies collection
-
-- Browser
-- cURL
-- React
-
-### Code along: (R)EAD specific movie
-
-- Browser
-- cURL
-- React
-
-### Lab: (D)ELETE specific movie
-
-- cURL
-- React
-
-### Code along: (U)PDATE specific movie
-
-- cURL
-- React
-
-*Hint: [Handling Multiple Inputs in React](https://reactjs.org/docs/forms.html#handling-multiple-inputs)*
-
-### Lab: (C)REATE new movie
-
-- cURL
-- React
-
-## Advanced React
-
-### Code along: Refactoring
-
-- Refactor forms into shared component
-- Add footer using component composition
-- Use `async` & `await` instead of promises
-
-### Bonus Lab: `async` & `await`
-
-Refactor the remaining CRUD functionality to use `async` and `await` instead
-of Promise chains.
 
 ## Additional Resources
 
