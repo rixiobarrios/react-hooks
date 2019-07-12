@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
@@ -6,59 +6,41 @@ import apiUrl from '../../apiConfig'
 import MovieForm from '../shared/MovieForm'
 import Layout from '../shared/Layout'
 
-class MovieCreate extends Component {
-  constructor (props) {
-    super(props)
+const MovieCreate = (props) => {
+  const [movie, setMovie] = useState({ title: '', director: '', year: '' })
+  const [createdMovieId, setCreatedMovieId] = useState(null)
 
-    this.state = {
-      movie: {
-        title: '',
-        director: '',
-        year: ''
-      },
-      createdMovieId: null
-    }
+  const handleChange = event => {
+    event.persist()
+    setMovie(movie => ({ ...movie, [event.target.name]: event.target.value }))
   }
 
-  handleChange = event => {
-    const updatedField = { [event.target.name]: event.target.value }
-
-    const editedMovie = Object.assign(this.state.movie, updatedField)
-
-    this.setState({ movie: editedMovie })
-  }
-
-  handleSubmit = event => {
+  const handleSubmit = event => {
     event.preventDefault()
 
     axios({
       url: `${apiUrl}/movies`,
       method: 'POST',
-      data: { movie: this.state.movie }
+      data: { movie }
     })
-      .then(res => this.setState({ createdMovieId: res.data.movie.id }))
+      .then(res => setCreatedMovieId(res.data.movie.id))
       .catch(console.error)
   }
 
-  render () {
-    const { handleChange, handleSubmit } = this
-    const { createdMovieId, movie } = this.state
-
-    if (createdMovieId) {
-      return <Redirect to={`/movies/${createdMovieId}`} />
-    }
-
-    return (
-      <Layout>
-        <MovieForm
-          movie={movie}
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-          cancelPath="/"
-        />
-      </Layout>
-    )
+  if (createdMovieId) {
+    return <Redirect to={`/movies/${createdMovieId}`} />
   }
+
+  return (
+    <Layout>
+      <MovieForm
+        movie={movie}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        cancelPath="/"
+      />
+    </Layout>
+  )
 }
 
 export default MovieCreate
