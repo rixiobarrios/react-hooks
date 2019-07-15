@@ -28,7 +28,7 @@ Rails API.
 
 ## Hooks Introduction
 
-React is a great framework. It is relatively easy to learn, it has given front-
+React is a great framework. It is relatively easy to learn, it has given front
 end developers more fluid control, and it might even be a tad fun. It is pretty
 new in terms of web development however so you should expect to hear about new
 additions to the technology as it gets a larger user base and pain points are
@@ -37,7 +37,7 @@ identified.
 One of those common points of frustration is sharing behaviour and state logic
 between components. There have been different solutions to this problem over
 the years, Higher Order Components, Mixins, Render Props, but as of React 16.8
-a new API has been added to help mitigate these problems. React Hooks!
+a new API has been added to help mitigate these problems. [React Hooks!](https://reactjs.org/docs/hooks-intro.html)
 
 ### Say Goodbye to Class Components
 
