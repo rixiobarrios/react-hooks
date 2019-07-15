@@ -20,17 +20,6 @@ class Movie extends Component {
       .then(res => this.setState({ movie: res.data.movie }))
       .catch(console.error)
   }
-  /*
-  Async/Await version:
-  async componentDidMount () {
-    try {
-      const response = await axios(`${apiUrl}/movies/${this.props.match.params.id}`)
-      this.setState({ movie: response.data.movie })
-    } catch (err) {
-      console.error(err)
-    }
-  }
-  */
 
   destroy = () => {
     axios({
@@ -40,19 +29,6 @@ class Movie extends Component {
       .then(() => this.setState({ deleted: true }))
       .catch(console.error)
   }
-  /*
-  async destroy = () => {
-    try {
-      const response = await axios({
-        url: `${apiUrl}/movies/${this.props.match.params.id}`,
-        method: 'DELETE'
-      })
-      this.setState({ deleted: true })
-    } catch (err) {
-      console.error(err)
-    }
-  }
-  */
 
   render () {
     const { movie, deleted } = this.state

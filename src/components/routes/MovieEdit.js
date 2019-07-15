@@ -25,17 +25,6 @@ class MovieEdit extends Component {
       .then(res => this.setState({ movie: res.data.movie }))
       .catch(console.error)
   }
-  /*
-  Async/Await version:
-  async componentDidMount () {
-    try {
-      const response = await axios(`${apiUrl}/movies/${this.props.match.params.id}`)
-      this.setState({ movie: response.data.movie })
-    } catch (err) {
-      console.error(err)
-    }
-  }
-  */
 
   handleChange = event => {
     const updatedField = { [event.target.name]: event.target.value }
@@ -56,22 +45,6 @@ class MovieEdit extends Component {
       .then(() => this.setState({ updated: true }))
       .catch(console.error)
   }
-  /*
-  async handleSubmit = event => {
-    event.preventDefault()
-
-    try {
-      const response = await axios({
-        url: `${apiUrl}/movies/${this.props.match.params.id}`,
-        method: 'PATCH',
-        data: { movie: this.state.movie }
-      })
-      this.setState({ updated: true })
-    } catch (err) {
-      console.error(err)
-    }
-  }
-  */
 
   render () {
     const { movie, updated } = this.state

@@ -19,17 +19,6 @@ class Movies extends Component {
       .then(res => this.setState({ movies: res.data.movies }))
       .catch(console.error)
   }
-  /*
-  Async/Await version:
-  async componentDidMount () {
-    try {
-      const response = await axios(`${apiUrl}/movies`)
-      this.setState({ movies: response.data.movies })
-    } catch (err) {
-      console.error(err)
-    }
-  }
-  */
 
   render () {
     const movies = this.state.movies.map(movie => (

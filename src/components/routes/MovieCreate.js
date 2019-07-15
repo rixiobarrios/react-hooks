@@ -39,22 +39,6 @@ class MovieCreate extends Component {
       .then(res => this.setState({ createdMovieId: res.data.movie.id }))
       .catch(console.error)
   }
-  /*
-  async handleSubmit = event => {
-    event.preventDefault()
-
-    try {
-      const response = await axios({
-        url: `${apiUrl}/movies`,
-        method: 'POST',
-        data: { movie: this.state.movie }
-      })
-      this.setState({ createdMovieId: response.data.movie.id })
-    } catch (err) {
-      console.error(err)
-    }
-  }
-  */
 
   render () {
     const { handleChange, handleSubmit } = this
