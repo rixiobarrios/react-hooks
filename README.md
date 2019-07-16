@@ -50,7 +50,7 @@ This is a good thing for React itself because lots of JavaScript developers
 don't use classes as they are only a syntax on top of constructors and
 prototypes. Now developers won't have to learn class syntax just to learn
 React. This also means we won't have to worry about binding `this` or
-using fat arrow functions to do it for us.
+using fat arrow functions to avoid having to to it.
 
 ### How to Use Hooks
 
@@ -118,8 +118,8 @@ updating.
 
 #### Hooking into Lifecycle Methods
 
-Having a functional component that can update its own state variable is game
-changing for React developers. If that was all Hooks provided it would be
+Having a functional component that can update its own state variable is a
+welcome change for React developers. If that was all Hooks provided it would be
 great, but you may be wondering about the typical Lifecycle methods that we can
 access from class components. Methods such as `componentDidMount`,
 `componentDidUpdate`, etc.
@@ -183,12 +183,25 @@ any of the objects in that array are changed, that is when it will invoke
 forever. If the array is empty, `useEffect` will only be called after the first
 render of the component. Just what we need in this case.
 
+#### One Hook to Rule Them All
+
+The last thing you might be wondering about is normally we would put different
+logic into the different Lifecycle methods and now we only have one function
+that will Hook into all of those.
+
+What if we want different code to run at different times during the life of our
+component? The answer is to invoke `useEffect` multiple times with a different
+set of dependency objects in that second argument. You can invoke it as many
+times as you need from within the component and it will know when it should be
+running that version of `useEffect` based on the changes to those dependency
+objects.
+
 ## Additional Resources
 
 - [React Docs for Hooks](https://reactjs.org/docs/hooks-intro.html)
 - [React Hooks and Forms](https://medium.com/@geeky_writer_/using-react-hooks-to-create-awesome-forms-6f846a4ce57)
 - [What exactly is useState?](https://stackoverflow.com/questions/53165945/what-is-usestate-in-react)
-- [Why does my http request keep happening from useEffect?](https://www.andreasreiterer.at/react-useeffect-hook-loop/)
+- [Why is my useEffect Hook executed in an endless loop?](https://www.andreasreiterer.at/react-useeffect-hook-loop/)
 - [History of React and how it got to Hooks](https://itnext.io/why-reacts-hooks-api-is-a-game-changer-8731c2b0a8c)
 
 ## [License](LICENSE)
