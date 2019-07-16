@@ -36,7 +36,7 @@ identified.
 
 One of those common points of frustration is sharing behaviour and state logic
 between components. There have been different solutions to this problem over
-the years, Higher Order Components, Mixins, Render Props, but as of React 16.8
+the years, [Higher Order Components](https://reactjs.org/docs/higher-order-components.html), [Mixins](https://reactjs.org/blog/2016/07/13/mixins-considered-harmful.html), [Render Props](https://reactjs.org/docs/render-props.html), but as of React 16.8
 a new API has been added to help mitigate these problems. [React Hooks!](https://reactjs.org/docs/hooks-intro.html)
 
 ### Say Goodbye to Class Components
