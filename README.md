@@ -312,7 +312,7 @@ mostly the same except for a small detail regarding how React handles events.
 React wraps the Browser's native `event` with something called a
 [SyntheticEvent](https://reactjs.org/docs/events.html#event-pooling). This is
 to improve cross-browser support. For performance reasons React reuses the
-`SyntheticEvent` objects by pooling them. Since it needs to reused it will
+`SyntheticEvent` objects by pooling them and since it needs to be reused it will
 nullify all the properties (such as `event.target`) after the callback has been
 invoked.
 
