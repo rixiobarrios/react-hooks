@@ -11,7 +11,7 @@
 By the end of this, developers should be able to:
 
 - Hook into state from a functional component.
-- Use an effect inside of a functional component.
+- Hook into a Lifecycle method from a functional component.
 
 ## Preparation
 
@@ -28,11 +28,10 @@ Rails API.
 
 ## Hooks Introduction
 
-React is a great framework. It is relatively easy to learn, it has given front
-end developers more fluid control, and it might even be a tad fun. It is pretty
-new in terms of web development however so you should expect to hear about new
-additions to the technology as it gets a larger user base and pain points are
-identified.
+React is a very popular framework. It is relatively easy to learn, it has given
+front end developers more fluid control, and it might even be a tad fun. It is
+still evolving however so you should expect to hear about new additions to the
+technology as it gets a larger user base and pain points are identified.
 
 One of those common points of frustration is sharing behaviour and state logic
 between components. There have been different solutions to this problem over
@@ -48,9 +47,9 @@ you choose to embrace Hooks.
 
 This is a good thing for React itself because lots of JavaScript developers
 don't use classes as they are only a syntax on top of constructors and
-prototypes. Now developers won't have to learn class syntax just to learn
-React. This also means we won't have to worry about binding `this` or
-using fat arrow functions to avoid having to to it.
+prototypes. Now developers won't have to learn class syntax just to use React.
+This also means we won't have to worry about binding `this` or using fat arrow
+functions to avoid having to to it.
 
 ### How to Use Hooks
 
@@ -109,8 +108,8 @@ setCounter(counter + 1)
 
 We pass in the `counter` variable and add one to it to ensure the new value
 will be one more than what `counter` was previously set to. We could pass in
-any number to update the `counter` but it makes sense for the count to only
-increase by one to do it this way.
+any number to update the `counter` but it makes sense to do it this way if we
+want the value to increase by one.
 
 `setCounter` and `counter` were both created by the same invocation of
 `useState` and therefore we don't need to tell `setCounter` what it should be
@@ -159,7 +158,7 @@ in a callback function.
 
 The callback function triggers the axios HTTP request which is mostly the same
 except we don't need to use `this` anymore since we are no longer in a class
-component. We can simply access the `props` themselves.
+component. We can simply access the `props` directly.
 
 The callback for our `.then` has changed a bit too. Now we are using a
 `setMovie` function instead of `setState`. Since `setMovie` is linked to a
