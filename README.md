@@ -195,6 +195,139 @@ times as you need from within the component and it will know when it should be
 running that version of `useEffect` based on the changes to those dependency
 objects.
 
+## Demo: Convert the Movie Component
+
+There are a few class components in this repo, let's start with the `Movie`
+component.
+
+Let's identify the pieces that will need to change. The most obvious change is
+in how we define the component. We should be defining it as a function instead
+of a class.
+
+```diff
+- class Movie extends Component {
++ const Movie = props => {
+```
+
+This change will also require us to alter how we are importing and
+destructuring React. We won't need the Component class anymore, but we will
+want to bring in the Hook functions we need access to.
+
+```diff
+- import React, { Component } from 'react'
++ import React, { useState, useEffect } from 'react'
+```
+
+Now onto our state. Instead of defining a state object, we want to invoke
+`useState` for each value we need to start with. We also no longer have any
+need for the `constuctor` function.
+
+```diff
+- constructor (props) {
+-   super(props)
+-   this.state = {
+-     movie: null,
+-     deleted: false
+-   }
+- }
+
++ const [movie, setMovie] = useState(null)
++ const [deleted, setDeleted] = useState(false)
+```
+
+In our functional component, we want to invoke `useEffect` to supply code that
+should be run during a Lifecycle method. So let's get rid of
+`componentDidMount`. In the process we will alter how we access `props` and
+we'll use our `setMovie` function instead of `setState` to update the `movie`
+variable.
+
+```diff
+- componentDidMount () {
+-   axios(`${apiUrl}/movies/${this.props.match.params.id}`)
+-    .then(res => this.setState({ movie: res.data.movie }))
+-    .catch(console.error)
+- }
+
++ useEffect(() => {
++   axios(`${apiUrl}/movies/${props.match.params.id}`)
++     .then(res => setMovie(res.data.movie))
++     .catch(console.error)
++ }, [])
+```
+
+We can't forget to pass an empty array as the second argument to `useEffect`,
+this tells React to only run the callback on the first render of the component,
+which replicates the behavior of using `componentDidMount`.
+
+Now instead of defining the `destroy` method as a class field, we'll need to
+define it as a regular JavaScript function. We'll also not be using `this`
+again or calling `setState`.
+
+```diff
+- destroy = () => {
+-   axios({
+-     url: `${apiUrl}/movies/${this.props.match.params.id}`,
+-     method: 'DELETE'
+-   })
+-     .then(() => this.setState({ deleted: true }))
+-     .catch(console.error)
+- }
+
++ const destroy = () => {
++   axios({
++     url: `${apiUrl}/movies/${props.match.params.id}`,
++     method: 'DELETE'
++   })
++     .then(() => setDeleted(true))
++     .catch(console.error)
++ }
+```
+
+The final changes we need are to remove the reference to `render` since we're
+inside a functional component we can simply `return` what we need from the
+component, and any reference to `this` inside the JSX should be removed as
+well. We also won't need to destructure `this.state` since our state values are
+already in the variables we need them to be in.
+
+```diff
+- render () {
+-   const { movie, deleted } = this.state
+```
+
+```diff
+- <button onClick={this.destroy}>Delete Movie</button>
+- <Link to={`/movies/${this.props.match.params.id}/edit`}>
+
++ <button onClick={destroy}>Delete Movie</button>
++ <Link to={`/movies/${props.match.params.id}/edit`}>
+```
+
+Better test it to make sure it still works!
+
+## Code Along: Convert the MovieCreate component
+
+Now let's do the same for the `MovieCreate` component together. It will be
+mostly the same except for a small detail regarding how React handles events.
+
+React wraps the Browser's native `event` with something called a
+[SyntheticEvent](https://reactjs.org/docs/events.html#event-pooling). This is
+to improve cross-browser support. For performance reasons React reuses the
+`SyntheticEvent` objects by pooling them. Since it needs to reused it will
+nullify all the properties (such as `event.target`) after the callback has been
+invoked.
+
+So if we need to access the `event`'s properties asynchronously, for updating
+state perhaps, we can use a method called `event.persist()`. This will:
+
+> remove the synthetic event from the pool and allow references to the event to
+> be retained by user code.
+
+## Lab: Convert the Movies and MovieEdit components
+
+Now time for you to try it out on your own! Use the working code we have and
+the React docs if you get stuck. Be methodical and meticulous, lots of little
+things that need to be changed.
+
 ## Additional Resources
 
 - [React Docs for Hooks](https://reactjs.org/docs/hooks-intro.html)
