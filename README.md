@@ -17,7 +17,9 @@ By the end of this, developers should be able to:
 
 1. Fork and clone this repository. [FAQ](https://git.generalassemb.ly/ga-wdi-boston/meta/wiki/ForkAndClone)
 1. Create a new branch, `training`, for your work.
+```git checkout -b training```
 1. Checkout to the `training` branch.
+```git checkout training```
 1. Install dependencies with `npm install`.
 
 ## Movie API
